@@ -1,4 +1,5 @@
 #include "matrix.h"
+#include <omp.h>
 
 int mat_print(char *output, double *matrix, int size)
 {

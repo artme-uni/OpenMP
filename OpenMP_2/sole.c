@@ -18,6 +18,7 @@ int sole_solution(const double *mat_A, const double *col_B, double *col_X, int s
     double *col_AX = (double *) calloc(size, sizeof(double));
     double *col_Yt = (double *) calloc(size, sizeof(double));
 
+
     do
     {
         mat_mult_by_column(mat_A, col_X, col_AX, size); // AX = A*X
@@ -54,6 +55,7 @@ int sole_solution(const double *mat_A, const double *col_B, double *col_X, int s
 
     } while (diff >= precision);
     printf("Iteration count: %d\n", count);
+    
 
     free(col_Y);
     free(col_AY);

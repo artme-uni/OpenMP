@@ -8,11 +8,16 @@
 #include "matrix/column.h"
 
 #define SIZE 1000
-#define COUNT 4
+#define COUNT 999
 
 int main()
 {
     omp_set_num_threads(COUNT);
+
+#pragma omp parallel
+    {
+        printf("%d\n", omp_get_num_threads());
+    };
 
     printf("Matrix size: %d\n", SIZE);
 

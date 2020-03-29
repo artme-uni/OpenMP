@@ -8,11 +8,16 @@
 #include "matrix/column.h"
 
 #define SIZE 1000
-#define COUNT 4
 
-int main()
+int main(int argc, char** argv)
 {
-    omp_set_num_threads(COUNT);
+    if(argc != 2)
+    {
+        printf("Expected: ./prog count\n");
+        return -1;
+    }
+
+    omp_set_num_threads(atoi(argv[1]));
 
     printf("Matrix size: %d\n", SIZE);
 
